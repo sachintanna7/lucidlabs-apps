@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LucidLabs — Android apps for everyday money and records</title>
+<meta name="description" content="LucidLabs is an independent Android app studio in Pune, India. We build small, practical apps for household ledgers, salaries, savings and gold.">
+<link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN/">
+<meta property="og:title" content="LucidLabs">
+<meta property="og:description" content="Android apps for the money and records an Indian household actually keeps.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter+Tight:wght@400;500&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#101A2B;
+    --paper:#FBFAF7;
+    --rule:#DFE2E7;
+    --brass:#A8761F;
+    --muted:#5E6675;
+    --tint:#F0F2F5;
+    --display:'Archivo',system-ui,sans-serif;
+    --body:'Inter Tight',system-ui,sans-serif;
+    --mono:'Roboto Mono',ui-monospace,monospace;
+    --page:min(1040px,92vw);
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--body);font-size:17px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  .wrap{width:var(--page);margin:0 auto}
+
+  .eyebrow{
+    font-family:var(--mono);font-size:11px;font-weight:500;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+    margin:0 0 18px;
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:26px 0 0;
+  }
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+  .mark{
+    width:30px;height:30px;flex:0 0 30px;border-radius:7px;
+    background:var(--ink);color:var(--paper);
+    display:grid;place-items:center;
+    font-family:var(--display);font-weight:700;font-size:16px;
+  }
+  .brand-name{
+    font-family:var(--display);font-weight:700;font-size:16px;
+    letter-spacing:-.01em;
+  }
+  .masthead-mail{
+    font-family:var(--mono);font-size:12.5px;color:var(--muted);
+    text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px;
+  }
+  .masthead-mail:hover{color:var(--ink);border-color:var(--brass)}
+
+  /* ---------- hero ---------- */
+  .hero{padding:clamp(52px,11vw,104px) 0 clamp(40px,7vw,64px)}
+  .hero h1{
+    font-family:var(--display);font-weight:700;
+    font-size:clamp(44px,10vw,82px);line-height:.96;letter-spacing:-.035em;
+    margin:0 0 22px;
+  }
+  .hero h1 .dot{color:var(--brass)}
+  .lede{
+    max-width:33ch;font-size:clamp(17px,2.3vw,20px);color:var(--muted);
+    margin:0;
+  }
+
+  /* ---------- ledger of apps ---------- */
+  .ledger{
+    border-top:1px solid var(--ink);
+    padding-top:20px;
+  }
+  .ledger-head{
+    display:flex;justify-content:space-between;align-items:baseline;
+    margin-bottom:26px;
+  }
+  .ledger-head .eyebrow{margin:0}
+  .count{font-family:var(--mono);font-size:11px;color:var(--muted)}
+
+  .row{
+    display:block;text-decoration:none;position:relative;
+    padding:20px 0 22px 18px;
+    border-bottom:1px solid var(--rule);
+  }
+  .row::before{
+    content:"";position:absolute;left:0;top:22px;bottom:24px;width:2px;
+    background:var(--brass);transform:scaleY(0);transform-origin:top;
+    transition:transform .28s ease;
+  }
+  .row:hover::before,.row:focus-visible::before{transform:scaleY(1)}
+  .row:focus-visible{outline:2px solid var(--brass);outline-offset:4px;border-radius:2px}
+
+  .row-top{display:flex;align-items:baseline;gap:12px}
+  .row-name{
+    font-family:var(--display);font-weight:600;
+    font-size:clamp(21px,3.4vw,27px);letter-spacing:-.02em;white-space:nowrap;
+  }
+  .leader{
+    flex:1;height:1px;min-width:14px;
+    background-image:radial-gradient(circle,var(--rule) 1px,transparent 1px);
+    background-size:6px 1px;background-repeat:repeat-x;
+    align-self:center;
+  }
+  .row-go{
+    font-family:var(--mono);font-size:12px;letter-spacing:.04em;
+    color:var(--muted);white-space:nowrap;
+  }
+  .row:hover .row-go,.row:focus-visible .row-go{color:var(--brass)}
+  .row-desc{margin:8px 0 0;max-width:56ch;color:var(--muted);font-size:15.5px}
+  .row-pkg{
+    display:inline-block;margin-top:9px;
+    font-family:var(--mono);font-size:11.5px;color:var(--muted);opacity:.75;
+  }
+
+  /* ---------- support ---------- */
+  .support{padding:clamp(56px,9vw,88px) 0 0}
+  .support-grid{display:grid;gap:34px;grid-template-columns:1fr}
+  @media(min-width:720px){.support-grid{grid-template-columns:1fr 1fr;gap:48px}}
+  .support h2{
+    font-family:var(--display);font-weight:600;font-size:22px;
+    letter-spacing:-.02em;margin:0 0 10px;
+  }
+  .support p{margin:0 0 12px;color:var(--muted);font-size:15.5px;max-width:46ch}
+  .mail-big{
+    font-family:var(--mono);font-size:15px;color:var(--ink);
+    text-decoration:none;border-bottom:2px solid var(--brass);padding-bottom:2px;
+  }
+  .mail-big:hover{color:var(--brass)}
+
+  /* ---------- footer ---------- */
+  footer{
+    margin-top:clamp(56px,9vw,90px);border-top:1px solid var(--rule);
+    padding:22px 0 46px;
+    display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;
+    font-family:var(--mono);font-size:11.5px;color:var(--muted);
+  }
+  footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
+  footer a:hover{color:var(--ink);border-color:var(--brass)}
+
+  /* ---------- entrance ---------- */
+  .rise{opacity:0;transform:translateY(10px);animation:rise .6s ease forwards}
+  .rise:nth-child(2){animation-delay:.06s}
+  .rise:nth-child(3){animation-delay:.12s}
+  .rise:nth-child(4){animation-delay:.18s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){
+    .rise{animation:none;opacity:1;transform:none}
+    .row::before{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <a class="brand" href="/">
+      <span class="mark" aria-hidden="true">L</span>
+      <span class="brand-name">LucidLabs</span>
+    </a>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">Independent app studio &middot; Pune, India</p>
+    <h1>LucidLabs<span class="dot">.</span></h1>
+    <p class="lede">Small Android apps for the money and records an Indian household actually keeps.</p>
+  </section>
+
+  <section class="ledger" aria-labelledby="apps-title">
+    <div class="ledger-head">
+      <p class="eyebrow" id="apps-title">Published on Google Play</p>
+      <span class="count">4 apps</span>
+    </div>
+
+    <!-- EDIT: check every Play URL and package name below before publishing -->
+
+    <a class="row rise" href="https://play.google.com/store/apps/details?id=com.lucidlabs.gharkhata">
+      <span class="row-top">
+        <span class="row-name">GharKhata</span>
+        <span class="leader" aria-hidden="true"></span>
+        <span class="row-go">Google Play &nearr;</span>
+      </span>
+      <p class="row-desc">A daily household ledger. Mark the milkman's delivery, staff attendance and salary, and every kharcha — then see the month totalled up. Works in 8 Indian languages and syncs with your family.</p>
+      <span class="row-pkg">com.lucidlabs.gharkhata</span>
+    </a>
+
+    <a class="row rise" href="https://play.google.com/store/apps/details?id=com.lucidlabs.goldly">
+      <span class="row-top">
+        <span class="row-name">Goldly</span>
+        <span class="leader" aria-hidden="true"></span>
+        <span class="row-go">Google Play &nearr;</span>
+      </span>
+      <!-- EDIT: replace with what Goldly actually does -->
+      <p class="row-desc">Gold and silver rates, and what your holdings are worth today.</p>
+      <span class="row-pkg">com.lucidlabs.goldly</span>
+    </a>
+
+    <a class="row rise" href="https://play.google.com/store/apps/details?id=com.lucidlabs.paisa">
+      <span class="row-top">
+        <span class="row-name">Paisa</span>
+        <span class="leader" aria-hidden="true"></span>
+        <span class="row-go">Google Play &nearr;</span>
+      </span>
+      <p class="row-desc">The money maths you keep redoing on paper: SIP returns, EMI schedules, income tax, take-home salary, FD and RD maturity — plus live IPO dates and grey market premium.</p>
+      <span class="row-pkg">com.lucidlabs.paisa</span>
+    </a>
+
+  </section>
+
+  <section class="support">
+    <div class="support-grid">
+      <div>
+        <h2>Support</h2>
+        <p>Found a bug, or something isn't adding up? Write to us with your device model and what you were doing — we read every mail and usually reply within two working days.</p>
+        <!-- EDIT: your support email -->
+        <a class="mail-big" href="mailto:sachintanna542@gmail.com">sachintanna542@gmail.com</a>
+      </div>
+      <div>
+        <h2>Privacy</h2>
+        <p>Our apps keep your entries on your own phone. Where an app offers family sync, only the data you choose to share leaves the device. Each app's full privacy policy is linked from its Google Play listing.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>&copy; <span id="yr">2026</span> LucidLabs &middot; Pune, India</span>
+    <span><a href="/app-ads.txt">Authorized sellers (app-ads.txt)</a></span>
+  </footer>
+
+</div>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
